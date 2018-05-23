@@ -62,4 +62,4 @@ if __name__ == "__main__":
     dL = read_proc_clean(fList,names)
     dL = group_sort(dL)
     df = dL[0]
-    df.to_csv(proc_file)
+    df.to_csv(proc_file,sep='\t')
