@@ -36,6 +36,7 @@ def read_proc_clean(x: list,name: list)->list:
     for k in dfL:
         k.dropna(inplace=True)
         k = k[k.UserName != '[deleted]']
+        k.Time = pd.to_datetime(k['Time'])
         k = string2int(k)
         l_new.append(k)
     dfL = l_new
@@ -62,4 +63,4 @@ if __name__ == "__main__":
     dL = read_proc_clean(fList,names)
     dL = group_sort(dL)
     df = dL[0]
-    df.to_csv(proc_file,sep='\t')
+    df.to_csv(proc_file)
