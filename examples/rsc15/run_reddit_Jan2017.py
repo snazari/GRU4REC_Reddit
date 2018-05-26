@@ -23,7 +23,7 @@ if __name__ == '__main__':
     
     #Reproducing results from "Session-based Recommendations with Recurrent Neural Networks" on RSC15 (http://arxiv.org/abs/1511.06939)
     for x in tqdm(range(10,100)):
-        print('Training GRU4Rec with '+str(x)' hidden units')
+        print('Training GRU4Rec with '+str(x)+' hidden units')
         for y in range(1,50):
             gru = gru4rec.GRU4Rec(loss='top1', final_act='tanh', hidden_act='tanh', 
                                   layers=[x], batch_size=y, dropout_p_hidden=0.5, learning_rate=0.01, momentum=0.0,
